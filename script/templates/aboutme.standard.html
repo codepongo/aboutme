@@ -1,0 +1,186 @@
+$def with(rss)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zuohaitao" />
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+}
+
+#nav ul, #nav ul li {
+	float:left;
+	text-align:right;
+	padding-right:10px;
+	height:1.5em;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size:1.5em;
+}
+#content1 {
+	font-family: Verdana, sans-serif;
+	font-size: small;
+	margin: auto;
+	width: 90em;
+}
+
+#content2 {
+	background-color:#FFFFFF;
+	float: left;
+	width: 65em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+#content3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding:20px;
+	line-height: 120%
+}
+
+#sidebar li {
+	list-style-type: square;
+	margin-left: -1em;
+}
+
+#header {
+	padding-left:5em;
+	background-image:url(/concise_banner.png);
+	background-repeat:no-repeat;
+	height:119px;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+h1 a:link,
+h1 a:visited {
+	border-bottom: none;
+}
+
+h2 {
+}
+
+h2 a:link,
+h2 a:visited {
+}
+
+h3 {
+}
+
+a:hover {
+}
+
+p {
+	text-align: left;
+}
+
+li {
+	text-align: left;
+	margin: .5em;
+}
+
+img {
+	border: none;
+}
+
+#footer {
+	padding: 2em;
+	clear:both;
+}
+pre {
+	padding: 1em;
+}
+
+#hit {
+	display: inline;
+	text-decoration: none;
+}
+
+h1,
+h2,
+div {
+	padding:0;
+	margin:0;
+}
+
+blockquote {
+  border-left: 3px solid;
+  font-style:normal;
+  padding: 0 0 0 10px;
+  display: block;
+  line-height: 22px;
+  vertical-align:baseline;
+  font-size: 100%;
+}
+</style>
+<title>CodePongo - about me</title>
+<script>
+</script>
+</head>
+<body>
+<div id="content1">
+<div id="nav">
+<ul>
+<li><a href="http://codepongo.com/blog">主页</a>|</li>
+<li><a href="http://codepongo.com/blog/application/">应用</a>|</li>
+<li><a href="http://note.codepongo.com/">日记</a>|</li>
+<li><a href="http://cook.codepongo.com/">烹饪</a>|</li>
+<li><a href="http://news.codepongo.com/" target="_blank">新闻</a>|</li>
+<li><a href="">关于我</a></li>
+</ul>
+</div>
+<div id="content2">
+<img src="head.png" alt="head"><b>zuohaitao</b><br>
+1982.12.02 male, beijing.<br>
+a software programer.<br>
+coding is not only work,but also is my favorite.<br>
+i like animals whatever alive or dead.<br>
+interest:cookie,swim,rock music,read,movie,paint...<br>
+IM:<img src="qq.png" alt="qq"><br>
+email:<img src="email.png" alt="email"><br>
+</p>
+<a href="http://bbs.chinaunix.net/space-uid-20730965.html" target="_blank">
+<img src="chinaunix.ico" alt="chinaunix ico" width="16" height="16">
+</a>
+<a href="http://code.google.com/p/utocode/" target="_blank">
+<img src="googlecode.png" alt="googlecode ico" width="16" height="16">
+</a>
+<a href="https://github.com/codepongo" target="_blank">
+<img src="github.ico" alt="github ico" width="16" height="16">
+</a>
+<a href="http://www.douban.com/people/zhuhuotui/" target="_blank">
+<img src="douban.ico" alt="douban ico" width="16" height="16"
+</a>
+<a href="http://www.v2ex.com/member/codepongo" target="_blank">
+<img src="v2ex.ico" alt="v2ex ico" width="16" height="16"
+</a>
+<a href="http://www.zhihu.com/people/codepongo" target="_blank">
+<img src="zhihu.ico" alt="zhihu ico" width="16" height="16"
+</a>
+
+<div>
+$for r in rss:
+    <div>
+		<a href="$r['url']" target="_blank">$r['url']</a>
+    </div>
+    <ul>
+    $for i in r['items']:
+        <li><a href="$i['url']" target="blank">$i['title']</a>  [$i['date']]</li>
+    </ul>
+
+</div>
+</div>
+</div>
+</body>
+</html>
