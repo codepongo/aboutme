@@ -1,6 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.dirname(__file__))
+import tempfile
 import web
 import about
 import resume
@@ -20,7 +21,8 @@ def error():
 app = web.application(urls, globals())
 web.config.session_parameters['timeout'] = 5 * 60 #five minutes
 if web.config.get('_session') is None:
-    session = web.session.Session(app, web.session.DiskStore('sessions'), {'authentication': False})
+    session_path = os.path.join(tempfile.gettempdir(),'sessions')
+    session = web.session.Session(app, web.session.DiskStore(session_path), {'authentication': False})
     web.config._session = session
 else:
     session = web.config._session
