@@ -28,3 +28,4 @@ def allin1(html):
 
 if __name__ == '__main__':
     allfilesin1('templates/aboutme.standard.html', 'templates/aboutme.html')
+    allfilesin1('templates/resume.standard.html', 'templates/resume.html')

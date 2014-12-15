@@ -1,0 +1,135 @@
+$def with(r)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zuohaitao" />
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+}
+
+#nav ul, #nav ul li {
+	float:left;
+	text-align:right;
+	padding-right:10px;
+	height:1.5em;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size:1.5em;
+}
+#content1 {
+	font-family: Verdana, sans-serif;
+	font-size: small;
+	margin: auto;
+	width: 90em;
+}
+
+#content2 {
+	background-color:#FFFFFF;
+	float: left;
+	width: 65em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+#content3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding:20px;
+	line-height: 120%
+}
+
+#sidebar li {
+	list-style-type: square;
+	margin-left: -1em;
+}
+
+#header {
+	padding-left:5em;
+	background-image:url(/concise_banner.png);
+	background-repeat:no-repeat;
+	height:119px;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+h1 a:link,
+h1 a:visited {
+	border-bottom: none;
+}
+
+h2 {
+}
+
+h2 a:link,
+h2 a:visited {
+}
+
+h3 {
+}
+
+a:hover {
+}
+
+p {
+	text-align: left;
+}
+
+li {
+	text-align: left;
+	margin: .5em;
+}
+
+img {
+	border: none;
+}
+
+#footer {
+	padding: 2em;
+	clear:both;
+}
+pre {
+	padding: 1em;
+}
+
+#hit {
+	display: inline;
+	text-decoration: none;
+}
+
+h1,
+h2,
+div {
+	padding:0;
+	margin:0;
+}
+
+pre {
+	width:65em;
+}
+</style>
+<title>zuohaitao-resume</title>
+<script>
+</script>
+</head>
+<body>
+<div id="content2">
+<div>
+<a href="/resume.txt"><img src="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAANwAAADcBYx2BhQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADySURBVDiN3ZOhTkNBEEXPNIiGNOEz4AfqEWubICoRJPMBhNQgwdUV3WQsqg5DyEgwCAQGAaKqCWkNhlABg1nx8rovvFqu2Z3MzJmb7I5EBOJ2ApwCH2zqEXgFDiLpqJ6UDLgDjiLpZwGAuJ0Dh8BLJD2r5jr5/GlqrugKeBe3SQnQSpF0XIe0BQRwLG4XQBcYiNslwE5LwBTYr8S3wLIIELc+oE2gSPqU62bAsOTgGRjn+xBYAzc5XlTqekUHkXQNzPOUFfAVSecNjrZ7hX8K+Osf3APfbQAdcdut70MkfSs1iVuvDrgGHsSttM4l7QETgF8SyE3Uec3wsgAAAABJRU5ErkJggg==" title="txt" alt="txt" /></a>
+<a href="/resume.pdf"><img src="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAANwAAADcBYx2BhQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFQSURBVDiNjdK/alVBEAbw3xHRS8RusRVE8Q2Mi8FCsBT2DZSAnY0WQhrLWEeLNBa+gLBF0BdQ9gkCBi2CWiRhvU1QhHg5Fp6Dh3DP9U6zw/z55ptvp2nbVk3xATZw3nyb4R22Qy67w0TTAXzEQ3wdAYA9HGEz5LLdB8927wSfQi4Hw46a4krI5Wfnt7iLtzVFPciZsXE1xasoNcVrg/A+7uBpTfHWkME8m+IbTk4BwAU8wodRgJDLtKa4in6ty2g6v+nBFjGA77iIXyGXw2GipniOxRrcxjG2Fk0YBcBj3MO0prjegU5OF81doaa4hh+IXWi9pvgMJzXF93g5yqCmeB3PsYtDPAm5rOEK7vsr3pe+vr/Efdzsit5gI+TyesF6aoptyKUZMriEHez8r3loQw2OcCPk8nnZZv5p8BuTZZu735gNGbzCXn8cS9gML+APMmVzvAvKwzgAAAAASUVORK5CYII=" title="pdf" alt="pdf" /></a>
+<a href="/resume.docx"><img src="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAANwAAADcBYx2BhQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFFSURBVDiNldOxatRBEMfxz99LYSHaGWRfQNAisTKSSsEH0IXFJxAUfAZLK0EL32FhLQQJIURs1BRqZ6GF5SKoWKUwJpe/hfuHS+4OLz9YdpaZ+c4sO9v1fS+V+hgPMDJbY7zEsxzD1qSja4ADnMkx/J6VnUrtcIhPeJ5jeDj4TrV9NC8Zcgx9M6/jVip1CrCQcgw/cAO3U6k3TwxIpfb4jsu4B0snqN5NgDrsTwFSqadxFV9yDN9SqSvo8BVXWthOjmEvlTqadYUxNnC/nTfbuohtvMDBZMIRQI5hH++xmkq9hGWcx88GeJ1jGM8FNL3Fqn9Ptoc/WMdagxzRPMAF3ME7fMRdnF0UsIO+VXyFN7iGmmP4/F9AjuEXhsDt1tFgT2neHDzCCj7gHJ6gzApc6DMdV5uX3RzD0tDBU+wOw7GAxi3HXwy9cRQH7mk3AAAAAElFTkSuQmCC" title="word" alt="word" /></a>
+</div>
+$:r
+</div>
+</body>
+</html>

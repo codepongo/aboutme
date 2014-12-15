@@ -1,0 +1,34 @@
+$def with(title, error=False)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="zuohaitao" />
+<style>
+.container {
+border: 1px solid #eeeeee;
+width: 20em;
+margin: auto;
+padding: 1em;
+$if error:
+    background: #F2DEDE;
+$else:
+    background: #C2DDB6;
+    
+}
+body {
+font-family: "Trebuchet MS",Verdana, Helvetica, Arial, sans-serif;
+font-size: 10pt;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<form action="/resume/login" method="POST">
+$title:<input type="password" name="passwd" />
+<input type="submit" value="Enter">
+</form>
+</div>
+</body>
+</html>
+

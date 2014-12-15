@@ -39,3 +39,5 @@ temp
 
 script/web/
 script/feedparser/tests/
+sessions
+conf.py
