@@ -41,4 +41,4 @@ script/web/
 script/feedparser/tests/
 sessions
 conf.py
-script/templates/me.jpg
+script/templates/resume.html
