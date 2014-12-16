@@ -38,6 +38,7 @@ temp
 *.swp
 
 script/web/
+script/web
 script/feedparser/tests/
 sessions
 conf.py
