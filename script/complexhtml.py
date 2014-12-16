@@ -2,6 +2,11 @@ import HTMLParser
 import basesixtyfour
 import re
 import os
+try:
+    import conf
+    resume_path = conf.resume_path
+except:
+    resume_path = os.path.dirname(__file__)
 
 def allfilesin1(template, out):
     with open(template, 'rb') as i:
@@ -19,7 +24,12 @@ def allin1(html):
             if tag == 'img':
                     for k, v in attrs:
                         if k == 'src':
-                            self.icons[v] = basesixtyfour.encode(os.path.join('templates', v))
+                            file_path = os.path.join(resume_path, v)
+                            if not os.path.isfile(file_path):
+                                file_path = os.path.join('templates', v)
+
+                            self.icons[v] = basesixtyfour.encode(file_path)
+
     p = Parser()
     p.feed(html)
     for key, value in p.icons.iteritems():
