@@ -11,7 +11,8 @@ try:
 except:
     title = 'password is 12345678900 for test'
     password = '12345678900'
-    resume_path = os.path.dirname(__file__)
+    resume_path = os.path.join(os.path.split(os.path.dirname(__file__))[0], 'data')
+    print resume_path
 
 class authentication:
     def GET(self):

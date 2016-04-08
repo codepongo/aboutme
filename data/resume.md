@@ -13,47 +13,44 @@
                               X
 </pre>
 
-## 简历 ##
+简历
+======================
 
-### 基本信息 ###
+
+# 基本信息 #
 * 姓名：X
 * 性别：X
-* 民族：X
-* 健康状况：X
-* 外文语种：X
 * 出生日期：X
 * 学历：X
 * 毕业院校：X
 * 专业：X
-* 籍贯：X
+* 出生地：X
 * 电话：X
 * 电子邮件：X
 * 家庭住址：X
 * 个人主页：X
 
-### 能力与技能 ###
+# 能力与技能 #
 
-#### 一、基本知识 ####
-* 1、X
-* 2、X
 
-#### 二、专业技术 ####
-* 1、X
-* 2、X
-* 3、X
-* 4、X
-* 5、X
+* X
+* X
 
-#### 工作经验 ####
-* X年X月-至今  X
- + X：X
-  - X：X
-  - X：X
-  - X：X
+
+# 工作经验 #
+
+
+
+## X年X月-至今 X##
+
+
+### X：X ###
+* X：X
+* X：X
+* X：X
  + X.X-X.X
-  - X：X
-  - X：X
-  - X：X
+
+
 
 <pre>
 Dear Madam/Sir:
@@ -68,7 +65,8 @@ I'm looking forward to your reply.
 
 X
 </pre>
-## Resume ##
+Resume
+============================
 
 
 X
@@ -81,12 +79,12 @@ Mobile:13716228955
 
 
 homepage:http://app.codepongo.com/
-### Information ###
+
+
+# Information #
 * Name:X
 * Sex:X
 * Nationality:X
-* Health:X
-* Foreign:X
 * Birth:X
 * Education:X
 * College:X
@@ -94,30 +92,22 @@ homepage:http://app.codepongo.com/
 * Native:X
 * Address:X
 
-### 1 Base Knowledges: ###
-* 1.1 X
-* 1.2 X
 
-### 2 Technology: ###
-* 2.1 X
-* 2.2 X
-* 2.3 X
-* 2.4 X
-* 2.5 X
-* 2.6 X
-* 2.7 X
+# Technology #
+*  X
+*  X
 
-### 3 Develop Tools: ###
-* 3.1 X
-* 3.2 X
-* 3.3 X
 
-### 4 Experience:###
-* X - now X
- + X
-  - X
-  - X
+# Experience #
+
+
+## X - now X ##
+
+
+### X ###
 * X - X X
  + X
   - X
   - X
+
+

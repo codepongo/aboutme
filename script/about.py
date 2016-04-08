@@ -1,7 +1,7 @@
 import sys
 import os
-import feedparser
-import downloadrss
+#import feedparser
+#import downloadrss
 import web
 
 class me:
@@ -11,6 +11,7 @@ class me:
         return render.aboutme(parse())
 
 def parse():
+    return ''
     rss = []
     for r in downloadrss.rss:
         f = feedparser.parse(os.path.join(os.path.dirname(__file__), downloadrss.rssdir, r[1]))
