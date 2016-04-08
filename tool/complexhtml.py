@@ -24,10 +24,7 @@ def allin1(html):
             if tag == 'img':
                     for k, v in attrs:
                         if k == 'src':
-                            file_path = os.path.join(resume_path, v)
-                            if not os.path.isfile(file_path):
-                                file_path = os.path.join('templates', v)
-
+                            file_path = v
                             self.icons[v] = basesixtyfour.encode(file_path)
 
     p = Parser()
@@ -37,5 +34,5 @@ def allin1(html):
     return html
 
 if __name__ == '__main__':
-    allfilesin1('templates/aboutme.standard.html', 'templates/aboutme.html')
-    allfilesin1('templates/resume.standard.html', 'templates/resume.html')
+    allfilesin1('aboutme.standard.html', '../script/templates/aboutme.html')
+    allfilesin1('resume.standard.html', '../script/templates/resume.html')
