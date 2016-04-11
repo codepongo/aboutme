@@ -4,10 +4,12 @@ import base64
 import urllib
 import pickle
 import feedparser
-temp = '../temp'
+import _dbhash as kvdb
+import datetime
+temp = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'temp')
 syndication = [
         ('http://codepongo.com/blog/feed', 'blog.rss', 'blog', 'static/blog.ico'),
-        #('http://note.codepongo.com/feed', 'note.rss', 'diary', 'static/note.ico'),
+        ('http://note.codepongo.com/feed', 'note.rss', 'diary', 'static/note.ico'),
         ('http://cook.codepongo.com/feed', 'cook.rss', 'cook', 'static/cook.ico'),
         #('http://www.douban.com/feed/people/zhuhuotui/interests', 'douban.rss', '豆瓣', 'static/douban.ico'),
         #('https://github.com/codepongo.atom', 'github.rss', 'GitHub', 'static/github.ico'),
@@ -17,9 +19,15 @@ syndication = [
 def feed(url):
     fn = base64.b64encode(url)
     fn = os.path.join(temp, fn)
+    now = datetime.date.today()
+    d = kvdb.open(os.path.join(temp, 'update'), 'c')
+    if d.has_key(url) and d[url] == str(now):
+        return fn
+
     with open(fn, 'wb') as f:
         rep = urllib.urlopen(url)
         f.write(rep.read())
+    d[url] = str(now)
     return fn
 
 def parse(f):
@@ -35,13 +43,13 @@ def parse(f):
         item['date'] = i['updated']
         item['url'] = i['link']
         channel['items'].append(item)
+    return channel
 
 def main():
     if not os.path.isdir(temp):
         os.mkdir(temp)
     rss = []
     for s in syndication:
-        print s[0]
         f = feed(s[0])
         rss.append(parse(f))
     
