@@ -35,6 +35,3 @@ def parse():
             channel['items'].append(item)
         rss.append(channel)
     return rss
-
-if __name__ == '__main__':
-    print parse()
