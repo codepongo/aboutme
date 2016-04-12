@@ -4,16 +4,18 @@ import base64
 import urllib
 import pickle
 import feedparser
-import _dbhash as kvdb
+try:
+    import dbhash as kvdb
+except:
+    import _dbhash as kvdb
 import datetime
-temp = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'temp')
+temp = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'temp')
 syndication = [
-        ('http://codepongo.com/blog/feed', 'blog.rss', 'blog', 'static/blog.ico'),
-        ('http://note.codepongo.com/feed', 'note.rss', 'diary', 'static/note.ico'),
-        ('http://cook.codepongo.com/feed', 'cook.rss', 'cook', 'static/cook.ico'),
-        #('http://www.douban.com/feed/people/zhuhuotui/interests', 'douban.rss', '豆瓣', 'static/douban.ico'),
-        #('https://github.com/codepongo.atom', 'github.rss', 'GitHub', 'static/github.ico'),
-        #('http://www.v2ex.com/feed/member/codepongo.xml', 'v2ex.rss', 'v2ex', 'static/v2ex.ico')
+        'http://codepongo.com/blog/feed',
+        'http://note.codepongo.com/feed',
+        'http://cook.codepongo.com/feed',
+        'https://www.douban.com/feed/people/zhuhuotui/interests',
+        'https://github.com/codepongo.atom', 
 ]
 
 def feed(url):
@@ -34,15 +36,18 @@ def parse(f):
     channel = {}
     rss_doc = feedparser.parse(f)
     channel['url'] = rss_doc.feed.link
-    max_len = 5
-    max_len = size if len(rss_doc['items']) < 5 else 5
+    length = 5
+    length = size if len(rss_doc['items']) < 5 else 5
     channel['items'] = []
     for i in rss_doc['items']:
+        if length < 0:
+            break
         item = {}
-        item['title'] = i['title'].replace('<h1>', '').replace('</h1>', '')
+        item['title'] = i['title']
         item['date'] = i['updated']
         item['url'] = i['link']
         channel['items'].append(item)
+        length -= 1
     return channel
 
 def main():
@@ -50,7 +55,7 @@ def main():
         os.mkdir(temp)
     rss = []
     for s in syndication:
-        f = feed(s[0])
+        f = feed(s)
         rss.append(parse(f))
     
     with open(os.path.join(temp, 'rss'), 'wb') as f:
